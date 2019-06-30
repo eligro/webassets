@@ -247,7 +247,7 @@ class Bundle(object):
                 if self.output:
                     try:
                         result.remove(self.resolve_output(ctx))
-                    except (ValueError, BundleError):
+                    except (ValueError, BundleError, RuntimeError):
                         pass
 
                 resolved.extend(map(lambda r: (item, r), result))
